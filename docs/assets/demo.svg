@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="452" viewBox="0 0 720 452" font-family="Menlo, Consolas, monospace" font-size="14">
+  <rect width="720" height="452" rx="10" fill="#101418"/>
+  <circle cx="24" cy="22" r="6" fill="#ff5f56"/>
+  <circle cx="44" cy="22" r="6" fill="#ffbd2e"/>
+  <circle cx="64" cy="22" r="6" fill="#27c93f"/>
+  <text x="360" y="27" fill="#8b949e" text-anchor="middle" font-size="12">steerd — pause, redirect, or cancel a running agent loop</text>
+  <g fill="#c9d1d9">
+    <text x="24" y="62"><tspan fill="#7ee787">$</tspan> steerd status --socket /tmp/agent.sock</text>
+    <text x="24" y="86">agent    <tspan fill="#79c0ff">steerd-demo</tspan> (pid 4711)    state    <tspan fill="#7ee787">running</tspan>    step 42</text>
+    <text x="24" y="108">task     summarize the incident report</text>
+    <text x="24" y="142"><tspan fill="#7ee787">$</tspan> steerd pause --socket /tmp/agent.sock --reason "operator check"</text>
+    <text x="24" y="166">pause: <tspan fill="#d2a8ff">accepted</tspan> (seq 1)</text>
+    <text x="24" y="188">pause: <tspan fill="#f778ba">applied at step 43</tspan></text>
+    <text x="24" y="222"><tspan fill="#7ee787">$</tspan> steerd redirect --socket /tmp/agent.sock --no-wait \</text>
+    <text x="24" y="244">    --message "focus on the timeline section"</text>
+    <text x="24" y="266">redirect: <tspan fill="#d2a8ff">accepted</tspan> (seq 2)</text>
+    <text x="24" y="300"><tspan fill="#7ee787">$</tspan> steerd resume --socket /tmp/agent.sock</text>
+    <text x="24" y="324">resume: <tspan fill="#d2a8ff">accepted</tspan> (seq 3)</text>
+    <text x="24" y="346">resume: <tspan fill="#f778ba">applied at step 43</tspan>   <tspan fill="#8b949e"># correction rides the same decision</tspan></text>
+    <text x="24" y="380"><tspan fill="#7ee787">$</tspan> steerd cancel --socket /tmp/agent.sock --reason "done here"</text>
+    <text x="24" y="404">cancel: <tspan fill="#d2a8ff">accepted</tspan> (seq 4)</text>
+    <text x="24" y="426">cancel: <tspan fill="#f778ba">applied at step 44</tspan>   <tspan fill="#8b949e"># loop exits cleanly, no kill -9</tspan></text>
+  </g>
+</svg>
